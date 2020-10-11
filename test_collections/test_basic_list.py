@@ -8,6 +8,11 @@ class MyTestCase(unittest.TestCase):
     def test_make_list(self, input):
         self.assertEqual(basic_list.make_list(), [3, 3, 3])
 
+    @patch('fun_with_collections.basic_list.get_input', return_value='ab')
+    def test_make_list_non_numeric(self, input):
+        with self.assertRaises(ValueError):
+            basic_list.make_list()
+
 
 if __name__ == '__main__':
     unittest.main()
