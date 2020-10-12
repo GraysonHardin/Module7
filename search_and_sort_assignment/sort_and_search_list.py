@@ -10,11 +10,19 @@ from basic_list_exception_assignment.basic_list_exceptions import make_list
 
 
 def search_list(search_value):
-   pass
+    my_list = (make_list())
+    # Below we use a try/catch to raise a value error.
+    try:
+        index = my_list.index(search_value)
+        return index
+
+    except ValueError:
+        not_in_list = -1
+        return not_in_list
 
 
 def sort_list():
-   pass
+    pass
 
 
 def main():
