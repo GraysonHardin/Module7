@@ -1,9 +1,9 @@
 """
 Program: basic_list.py
 Author: Grayson Hardin
-Last date modified: 10/10/2020
+Last date modified: 10/12/2020
 
-
+This program takes inputs and then returns the list in the order that was given.
 """
 
 
