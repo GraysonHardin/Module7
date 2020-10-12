@@ -28,6 +28,26 @@ class MyTestCase(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
+    @patch('search_and_sort_assignment.sort_and_search_list.make_list')
+    def test_sort_list(self, mock_list):
+        mock_list.return_value = [5, 2, 3]
+        expected = [2, 3, 5]
+        actual = sort_list()
+        self.assertEqual(expected, actual)
+
+    @patch('search_and_sort_assignment.sort_and_search_list.make_list')
+    def test_sort_list_with_string_values(self, mock_list):
+        mock_list.return_value = ['a', 'e', 'c']
+        expected = ['a', 'c', 'e']
+        actual = sort_list()
+        self.assertEqual(expected, actual)
+
+    @patch('search_and_sort_assignment.sort_and_search_list.make_list')
+    def test_sort_list_with_string_and_numeric(self, mock_list):
+        mock_list.return_value = [1, 'b', 2]
+        with self.assertRaises(TypeError):
+            sort_list()
+
 
 if __name__ == '__main__':
     unittest.main()
