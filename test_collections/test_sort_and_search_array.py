@@ -30,6 +30,20 @@ class MyTestCase(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
+    @patch('sort_and_search_array.sort_and_search_array.make_list')
+    def test_sort_list(self, mock_list):
+        mock_list.return_value = arr.array('i', [5, 2, 3])
+        expected = [2, 3, 5]
+        actual = sort_array()
+        self.assertEqual(expected, actual)
+
+    @patch('sort_and_search_array.sort_and_search_array.make_list')
+    def test_sort_list_with_string_values(self, mock_list):
+        mock_list.return_value = arr.array('u', ['a', 'e', 'c'])
+        expected = ['a', 'c', 'e']
+        actual = sort_array()
+        self.assertEqual(expected, actual)
+
 
 if __name__ == '__main__':
     unittest.main()
