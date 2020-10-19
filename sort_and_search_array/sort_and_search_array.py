@@ -23,7 +23,9 @@ def search_array(search_value):
 
 
 def sort_array():
-  pass
+    my_array = make_list()
+    return sorted(my_array)  # I decided to add a return statement to my sort_array so it would not be void. While it could be done with or without, I prefer assigning it to a variable and then returning the variable.
+
 
 def main():
     user_search_value = int(input("Provide an integer search term: "))  # The array will be searched with this number and will then go to lines 14-20 for validation.

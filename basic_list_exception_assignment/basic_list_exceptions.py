@@ -5,11 +5,11 @@ Last date modified: 10/12/2020
 
 Like previous examples, this program will print the numbers from user_input. However, if the user_input is outside of the range (less than 1 or greater than 50) it will return a ValueError.
 """
+import array as arr
 
 
 def make_list():
-    my_list = []
-
+    my_list = arr.array('i', [])  # Note, this has been changed to an array for the sort_and_search_array assignment.
     while len(my_list) <= 2:
         # int function will raise a value exception when it cannot cast to integer.
         user_input = int(get_input())
@@ -29,3 +29,4 @@ def get_input():
 if __name__ == '__main__':
     example = make_list()
     print(example)
+
